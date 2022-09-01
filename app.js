@@ -75,10 +75,16 @@ function drawGoldCoins() {
 }
 
 function healthPotion(name) {
-  let hero = heroes.find(hero => hero.health == name)
-  // @ts-ignore
-  hero.health + 100
-
+  console.log(name);
+  let hero = heroes.find(hero => hero.name == name)
+  if (hero.health > 0) {
+    hero.health += 100
+    drawHP()
+  }
+  if (goldCoins > 100) {
+    goldCoins -= 100
+  } else
+    drawGoldCoins()
 }
 
 setInterval(bossDmg, 5000)
