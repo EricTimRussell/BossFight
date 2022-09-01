@@ -1,0 +1,19 @@
+body {
+  background-image: url(https://i.ytimg.com/vi/XfWXEyU7H-g/maxresdefault.jpg);
+  background-size: cover;
+}
+
+.characterImgFane {
+  max-width: 20vh;
+  max-height: 30vh;
+}
+
+.characterImgRP {
+  min-width: 20vh;
+  max-height: 30vh;
+}
+
+.bossImg {
+  max-width: 80vh;
+  max-height: 80vh;
+}
