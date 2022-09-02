@@ -1,3 +1,4 @@
+let goldCoins = 0
 const heroes = [
   {
     name: 'Fane',
@@ -11,16 +12,12 @@ const heroes = [
   }
 ]
 
-
-
 const boss = {
   health: 200,
   maxHealth: 1000,
   damage: 25,
   level: 1
 }
-
-let goldCoins = 0
 
 function heroesDoDmg() {
   heroes.forEach(hero => {
@@ -53,14 +50,14 @@ function drawHP() {
 
 function bossDmg() {
   heroes.forEach(hero => {
-    hero.health -= 25
+    hero.health -= boss.damage
   })
   drawHP()
 }
 
 function bossLevelUp() {
   if (boss.health <= 0) {
-    boss.damage + 50
+    boss.damage += 20
     boss.health = 300 * boss.level
     boss.level++
     goldCoins += 100 * boss.level
@@ -75,17 +72,26 @@ function drawGoldCoins() {
 }
 
 function healthPotion(name) {
-  console.log(name);
   let hero = heroes.find(hero => hero.name == name)
-  if (hero.health > 0) {
+  // @ts-ignore
+  if (hero.health > 0 && goldCoins > 99) {
+    // @ts-ignore
     hero.health += 100
-    drawHP()
-  }
-  if (goldCoins > 100) {
     goldCoins -= 100
-  } else
+    drawHP()
     drawGoldCoins()
+  }
+
+
 }
 
-setInterval(bossDmg, 5000)
+// function buyMagicSword() {
+//   let hero = heroes.forEach(hero => {
+//     hero.damage += 7
+//     goldCoins -= 300
+//   })
+//   drawGoldCoins()
+// }
+
+setInterval(bossDmg, 7000)
 drawHP()
