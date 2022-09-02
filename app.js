@@ -35,7 +35,7 @@ function heroesDoDmg() {
 
 function drawHP() {
   // @ts-ignore
-  document.getElementById('boss Hp').innerText = `Hp:${boss.health}`
+  document.getElementById('boss Hp').innerText = `Hp:${boss.health} Dmg:${boss.damage} Level-${boss.level}`
 
 
   heroes.forEach(hero => {
@@ -44,7 +44,7 @@ function drawHP() {
     if (hero.health < 0)
       hero.health = 0
     // @ts-ignore
-    heroHp.querySelector('.hero').innerText = `Name: ${hero.name} Hp: ${hero.health}`
+    heroHp.querySelector('.hero').innerText = `${hero.name} Hp: ${hero.health}  Dmg:${hero.damage}`
   })
 }
 
@@ -81,17 +81,25 @@ function healthPotion(name) {
     drawHP()
     drawGoldCoins()
   }
+}
 
+function damageUpgrade(name) {
+  let hero = heroes.find(hero => hero.name == name)
+  // @ts-ignore
+  if (hero.health > 0 && goldCoins > 299) {
+    // @ts-ignore
+    hero.damage += 10
+    goldCoins -= 300
+    drawHP()
+    drawGoldCoins()
+  }
 
 }
 
-// function buyMagicSword() {
-//   let hero = heroes.forEach(hero => {
-//     hero.damage += 7
-//     goldCoins -= 300
-//   })
-//   drawGoldCoins()
-// }
+function reset() {
+  // work in progress
 
-setInterval(bossDmg, 7000)
+}
+
+setInterval(bossDmg, 10000)
 drawHP()

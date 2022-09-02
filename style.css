@@ -6,7 +6,7 @@ body {
 
 .characterImgFane {
   max-width: 20vh;
-  min-height: 30vh;
+  min-height: 25vh;
   border: 4px solid #34a300;
   user-select: none;
   cursor: pointer;
@@ -14,7 +14,7 @@ body {
 
 .characterImgRP {
   min-width: 20vh;
-  max-height: 30vh;
+  max-height: 25vh;
   border: 4px solid #34a300;
   user-select: none;
   cursor: pointer;

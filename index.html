@@ -13,7 +13,7 @@
 
 <body>
   <header>
-    <h3 class="text-success" id="coins">GoldCoins</h3>
+    <h3 class="text-dark" id="coins">GoldCoins</h3>
   </header>
 
   <main>
@@ -27,12 +27,17 @@
             <h4 class="hero">Name: Fane &nbsp;&nbsp; Hp:</h4>
           </div>
           <div class="d-flex">
-            <button class="btn btn-danger mdi mdi-bottle-tonic-plus fs-2" onclick="healthPotion('Fane')">Fane</button>
+            <button class="btn btn-danger mdi mdi-bottle-tonic-plus fs-2" onclick="healthPotion('Fane')"></button>
+            <button class="btn btn-danger mdi mdi-sword fs-2" onclick="damageUpgrade('Fane')">Dmg+</button>
+          </div>
+          <div class="text-light d-flex fs-5">
+            <p>100GC</p>
+            <p class="px-3">300GC</p>
           </div>
         </div>
         <div class="col-md-6 d-flex justify-content-center text-danger">
           <img src="Kraken.png" alt="" class="bossImg" onclick="heroesDoDmg()">
-          <h4 id="boss Hp">Hp:</h4>
+          <h4 class="fs-2" id="boss Hp">Hp:</h4>
         </div>
       </div>
       <div class="row">
@@ -41,14 +46,18 @@
           <div class="d-flex text-light" id="Red">
             <h4 class="hero">Name: Red &nbsp;&nbsp; Hp:</h4>
           </div>
-          <div> <button class="btn btn-danger mdi mdi-bottle-tonic-plus fs-2" onclick="healthPotion('Red')">Red</button>
+          <div>
+            <button class="btn btn-danger mdi mdi-bottle-tonic-plus fs-2" onclick="healthPotion('Red')"></button>
+            <button class="btn btn-danger mdi mdi-bottle-tonic-plus fs-2" onclick="damageUpgrade('Red')">Dmg+</button>
+          </div>
+          <div class="text-light fs-5 d-flex">
+            <p>100GC</p>
+            <p class="px-3">300GC</p>
           </div>
         </div>
-        <!-- <div class="col-md-9 d-flex align-items-end">
-          <img
-            src="https://th.bing.com/th/id/R.3a12fdbea3a3b02a39a2ed303e2d42a1?rik=N0kvF%2bEFpeOn6A&riu=http%3a%2f%2ffc04.deviantart.net%2ffs71%2fi%2f2011%2f285%2ff%2f9%2fferb__s_magic_sword_by_kicsterash-d4clz45.png&ehk=PqEhUkXrRrop6sQcwvUQfZYULkqXE3cJKcJfXuyNd18%3d&risl=&pid=ImgRaw&r=0"
-            alt="" class="magic-sword" onclick="buyMagicSword()">
-        </div> -->
+        <div class="col-md-9 d-flex align-items-end">
+          <button onclick="reset()" class="btn btn-danger">RESET</button>
+        </div>
       </div>
     </div>
 
